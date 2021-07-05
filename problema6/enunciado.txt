@@ -1,0 +1,84 @@
+6 - Edmonds-Karp
+Implemente o Algoritmo de Edmonds-Karp para encontrar um fluxo máximo em uma rede de fluxo (D, c, s, t).
+Critérios importantes
+Independente dos resultados dos testes, o não cumprimento dos critérios abaixo implicará em nota zero para esta atividade. Qualquer dúvida, entre em contato.
+As únicas estruturas de dados que você poderá usar da biblioteca padrão são: vetores/matrizes (estáticos e/ou dinâmicos), listas, pilhas, strings.
+🚨 De agora em diante, hashs/dicionários/maps estão proibidos (a não ser que liberados explicitamente)
+numpy, do Python, não é uma biblioteca padrão e, portanto, não pode ser usada.
+Se você precisar, você pode usar uma rotina de ordenação fornecida pela sua linguagem.
+Quem fizer em Java, deve usar a classe BufferedReader para fazer a leitura da entrada (ela é bem mais rápida do que a Scanner)
+Entrada
+A primeira linha da entrada consiste de um número n (1 <= n <= 100000) que denota o número de vértices do digrafo D e a segunda, de um número inteiro m (0 <= m <= n (n - 1)) que presenta o número total de arcos em D. Você pode assumir que D não contém 2-ciclos. A terceira linha consiste de um número inteiro s e a quarta, de um inteiro t. Esses inteiros representam dois vértices de D e você pode assumir que s != t. Cada uma das próximas m linhas consiste de três números inteiros x y w, onde 0 <= x, y < n e 0 <= w <= 999, representando que D contém um arco xy tal que c(xy) = w.
+Saída
+A primeira linha da sua saída deve consistir de um inteiro F que representa o valor do fluxo máximo em (D, c, s, t). Você deve usar as próximas m linhas para descrever um fluxo máximo f. Cada uma dessas linhas deve consistir de três número inteiros x y k representando que f(xy) = k, ou seja, que o fluxo f através no arco xy é igual a k.
+Exemplos
+Teste 01
+Entrada:
+8
+11
+1
+7
+0 4 54
+1 3 17
+1 4 96
+1 7 8
+2 7 52
+3 2 73
+3 6 53
+4 7 30
+5 1 52
+5 4 75
+7 5 79
+Saída:
+55
+0 4 0
+1 3 17
+1 4 30
+1 7 8
+2 7 17
+3 2 17
+3 6 0
+4 7 30
+5 1 0
+5 4 0
+7 5 0
+Teste 02
+Entrada:
+10
+14
+8
+7
+0 4 69
+0 8 59
+1 0 39
+1 2 2
+1 9 52
+2 6 17
+2 9 60
+3 7 52
+5 3 61
+6 9 60
+7 1 65
+7 5 66
+8 6 75
+9 3 68
+Saída:
+52
+0 4 0
+0 8 0
+1 0 0
+1 2 0
+1 9 0
+2 6 0
+2 9 0
+3 7 52
+5 3 0
+6 9 52
+7 1 0
+7 5 0
+8 6 52
+9 3 52
+Observações
+Você deve incluir, no início do seu programa, uma breve descrição dos objetivos do programa, da entrada e da saída, além do seu nome e do seu RA.
+Indente corretamente o seu código e inclua comentários no decorrer do programa seu.
+Linguagens aceitas: c, c++, python, java

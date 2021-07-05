@@ -1,0 +1,75 @@
+3 - Yfazenda
+
+Descrição
+Você acaba de ser contratado na YRural, uma startup mineira de agricultura de precisão. A YRural presta diversos serviços tecnológicos para o agronegócio, mas o seu carro chefe é o famoso Yfazenda. O Yfazenda é um sistema de monitoramento inteligente de propriedade rural. Ele consiste de diversas Ystations (miniestações de monitoramento) espalhadas pela propriedade. Cada Ystation possui diversos sensores: umidade do solo e do ar, velocidade e direção do vento, temperatura, valores de NPK do solo e etc.. Esses sensores são capazes de analisar com precisão o setor monitorado por eles.
+Ao contratar o Yfazenda, um engenheiro agrônomo da YRural visita a propriedade, analisa-a, define o número de Ystations necessárias para monitorá-la e suas geolocalizações. Posteriormente, uma segunda equipe da YRural visita a propriedade e faz as instalações das Ystations.
+As Ystations possuem um poder de processamento de dados muito limitado. Basicamente, todos os dados coletados pelos sensores são enviados para uma central, localizada dentro da propriedade rural, para que sejam processados. Embora as Ystations funcionem à energia solar, o que elimina a necessidade de um cabeamento para energizá-las, para transmitir os dados coletados por elas é necessário usar fibra ótica, pois geralmente as Ystations estão a quilômetros da central, o que inviabiliza, por questões técnicas ou financeiras, o uso de tecnologias Wireless.
+Dizemos que uma Ystation está conectada à central se ela é capaz de enviar os dados coletados por ela até a central. Felizmente, ligar um cabo diretamente da Ystation até a central não é a única forma de conectar uma Ystation. Cada Ystation pode funcionar como um roteador de rede. Assim, se duas Ystations, digamos A e B, estão conectadas entre si por um cabo, então A pode reencaminhar as informações enviadas de B e vice-versa. Portanto, se uma Ystation A está conectada à central, podemos conectar uma Ystation B à central simplesmente ligando um cabo de B até A.
+O fato de não precisarmos ligar todas as Ystations diretamente à central reduz bastante o custo da instalação. E não estamos falando simplesmente da economia com a fibra ótica, mas também de uma economia com mão de obra, pois é necessário cavar trincheiras de pelo menos 40cm de profundidade para enterrar os cabos. Assim, quanto mais fibras usarmos para conectar as Ystations, mais custosa é essa instalação.
+Seu primeiro projeto na YRural (é bom fazer direito, porque você ainda está no período de experiência 😂) é desenvolver uma programa que, dada as localizações das Ystations de uma propriedade rural, compute a menor quantidade de fibra ótica, consequentemente de trincheiras cavadas, para conectar todas as Ystations à central. Ademais, o seu programa deve indicar como esse cabeamento deve ser feito.
+Critérios importantes
+Independentemente dos resultados dos testes, o não cumprimento dos critérios abaixo implicará em nota zero nesta tarefa. Qualquer dúvida, entre em contato.
+Você deve implementar o grafo usando listas de adjacências
+Você deve usar o algoritmo de Prim, implementado com heap binária,  para resolver o problema.
+Neste exercício, você NÃO pode usar as seguintes estruturas de dados da biblioteca padrão da sua linguagem: - Conjuntos - Fila de prioridades - Heap - Union-Find
+As únicas estruturas de dados que você poderá usar da biblioteca padrão são: vetores/matrizes (estáticos e/ou dinâmicos), listas, pilhas, strings, hashs.
+Se você precisar, você pode usar uma rotina de ordenação fornecida pela sua linguagem.
+Entrada
+A primeira linha da entrada contém um inteiro n, com 1 <= n <= 1000, que representa o número de Ystations e centrais (n - 1 Ystations e uma central). As próximas n linhas contêm, cada uma, as coordenadas das Ystations e da central. Como as coordenadas de GPS já foram preprocessadas pelo sistema da Yfazenda, você pode assumir que uma coordenada é um par de inteiros X Y, onde 0 <= X, Y <= 999999, separados por espaço, que representa a coordenada (X, Y) no plano cartesiano. A coordenada da central é a última coordenada fornecida.
+Saída
+A primeira linha da saída do seu programa deve consistir da frase comprimento de cabeamento minimo: N, onde N deve ser substituído pelo menor comprimento total de fibra ótica necessário para conectar todas as Ystations à central. O comprimento de um cabo ligando duas coordenadas é dada pela distância euclidiana entre os pontos. Ademais, N deve ser fornecido com 4 casas decimais de precisão. As próximas linhas da saída do seu programa devem especificar como fazer essas conexões entre as Ystations e a central. Cada uma dessas linhas consiste de dois inteiros i j representando que um cabo de fibra ótica deve ser conectado da i-ésima coordenada fornecida na entrada até a j-ésima coordenada (a numeração das coordenadas da entrada começa em zero). Por fim, essas linhas devem ser apresentadas em ordem lexicográfica, isto é, uma linha contendo os inteiros i j deve aparecer antes da linha contendo os inteiros p q se i < p ou, no caso de i = p, se j < q.
+Exemplos
+Teste 01
+Entrada:
+6
+2 13
+1 19
+19 1
+4 17
+9 5
+8 1
+Saída:
+comprimento de cabeamento minimo: 33.6013
+0 3
+0 4
+1 3
+2 4
+4 5
+Teste 02
+Entrada:
+6
+15 18
+11 12
+0 19
+19 15
+8 18
+0 6
+Saída:
+comprimento de cabeamento minimo: 39.3004
+0 3
+0 4
+1 4
+1 5
+2 4
+Teste 03
+Entrada:
+7
+6 6
+0 0
+9 18
+11 0
+9 4
+12 13
+19 3
+Saída:
+comprimento de cabeamento minimo: 40.1575
+0 1
+0 4
+0 5
+2 5
+3 4
+3 6
+Observações
+Você deve incluir, no início do seu programa, uma breve descrição dos objetivos do programa, da entrada e da saída, além do seu nome e do seu RA.
+Indente corretamente o seu código e inclua comentários no decorrer do programa seu.
+Linguagens aceitas: c, c++, python, java

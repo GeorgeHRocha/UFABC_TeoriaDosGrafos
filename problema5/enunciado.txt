@@ -1,0 +1,87 @@
+5 - Contato
+Muitos anos após a construção da Máquina e do primeiro contato com vida inteligente extraterrestre realizado pela Dra. Arroway, a humanidade já se encontra totalmente integrada ao universo, realizando comércio com as mais distintas civilizações. Podemos visitar sistemas solares a milhões de anos luz, gastando não mais do que se levaria em uma viagem de avião entre o Rio de Janeiro e São Paulo no século XXI, graças à estrutura de buracos de minhoca deixada pelos Arquitetos, como são chamados os criadores dessa estrutura.
+
+Um buraco de minhoca é uma dobra no tecido do espaço tempo que gera uma passagem bidirecional entre dois pontos no universo, criando um atalho entre eles, o que na prática nos permite viajar acima da velocidade da luz. O acesso a um desses buracos de minhoca geralmente fica próximo de um grande buraco negro, que, geralmente, também possui acesso a diversos outros buracos de minhoca. Isso cria uma espécie de um grande metrô interestelar, onde as estações são esses buracos negros em diferentes sistemas solares.
+Ninguém no universo sabe quem são os Arquitetos, o que aconteceu com eles, onde eles estão, ou como eles construíram os buracos de minhoca. Se você estiver interessado em saber um pouco mais sobre como se decorreu esse primeiro contado da humanidade com outras civilizações inteligentes do universo, recomendamos o livro Contato, do historiador Carl Sagan (também fizeram um documentário, de mesmo nome).
+No início, navegar pelos buracos de minhoca deixados pelos Arquitetos era como navegar em uma caravela no século XVI: uma viagem rumo ao desconhecido e com um sistema de navegação precário. Jornada essa da qual muitos, infelizmente, não retornaram. Mas hoje os tempos são outros. A nossa cartografia interestelar está bem desenvolvida e conhecemos detalhadamente essa rede de buracos de minhoca, que foi mapeada por desbravadores galáticos destemidos.
+Embora a grande maioria das viagens por essa rede sejam operadas comercialmente, por grande naves de passageiros ou de carga, começam a surgir iniciativas na navegação civil. A Tesla é uma das empresas que está determinada a desenvolver um carro interestelar. Para isso, ela precisa que você, lendário aluno de Teoria dos Grafos do Prof. Maycon (ainda bem que eles descobriram o segredo da longevidade em 2024!), desenvolva o programa do UPS (Universal Positional System) – O GPS do universo.
+O programa do UPS que você deve escrever deve ser capaz de computar uma rota entre um sistema solar de origem e um de destino que consuma a menor quantidade de energia possível.
+Critérios importantes
+Independente dos resultados dos testes, o não cumprimento dos critérios abaixo implicará em nota zero para esta atividade. Qualquer dúvida, entre em contato.
+As únicas estruturas de dados que você poderá usar da biblioteca padrão são: vetores/matrizes (estáticos e/ou dinâmicos), listas, pilhas, strings.
+🚨 De agora em diante, hashs/dicionários/maps estão proibidos (a não ser que liberados explicitamente)
+numpy, do Python, não é uma biblioteca padrão e, portanto, não pode ser usada.
+Se você precisar, você pode usar uma rotina de ordenação fornecida pela sua linguagem.
+Você deve resolver este problema usando o Algoritmo de Dijkstra cuja fila de prioridades deve ser implementada por você como uma Heap Binária.
+Entrada
+A primeira linha de entrada consiste de uma sequência de caracteres -, com no máximo 80 caracteres e sem espaços entre eles. A segunda linha da entrada consiste na frase SOLAR SYSTEMS: n, onde n é um número inteiro, 1 <= n <= 100000, que representa o número total de sistemas solares cobertos pelo sistema de navegação. A terceira linha consiste na frase WORMHOLES: m, onde 0 <= m <= n (n - 1), que presenta o número total de buracos de minhoca conectando sistemas solares. A quarta linha consiste na frase ORIGIN: x, 0 <= x <= n - 1, que representa o sistema solar de origem. A quinta linha consiste na frase DESTINATION: y, 0 <= y <= n - 1, que representa o sistema solar de destino. A sexta linha consiste de uma sequência de caracteres - nos moldes da primeira linha. Cada uma das próximas m linhas consiste de três números x y w, onde x e y são inteiros tais que 0 <= x, y < n e w é um número real tal que 0 <= w <= 999, representando que existe um buraco de minhoca conectando o sistema solar x ao sistema solar y e que custo energético de atravessar tal buraco de minhoca é de w googol Joules/metro.
+Saída
+O seu programa deve calcular uma rota, usando a menor quantidade e energia possível, que vá do sistema solar x ao y. Caso essa rota não exista, o seu programa deve imprimir uma única linha com a frase NO ROUTE FOUND!. Caso exista, então a primeira linha da saída do seu programa deve consistir da frase TOTAL JUMPS: k, onde k é um número inteiro positivo que representa o número de sistemas solares percorridos ao longo da rota. A segunda linha deve consistir da frase ENERGY REQUIRED: e, onde e é um número real com quatro casas decimais de precisão. A terceira linha deve consistir da frase ROUTE:, e, cada uma das próximas k linhas deve consistir da frase i: j, onde j é o i-ésimo sistema solar visitado ao longo da rota.
+Exemplos
+Teste 01
+Entrada:
+--------------------
+SOLAR SYSTEMS: 6
+WORMHOLES: 3
+ORIGIN: 3
+DESTINATION: 0
+--------------------
+0 2 16.6527
+1 3 0.2998
+1 4 924.0068
+Saída:
+NO ROUTE FOUND!
+Teste 02
+Entrada:
+--------------------
+SOLAR SYSTEMS: 8
+WORMHOLES: 9
+ORIGIN: 4
+DESTINATION: 2
+--------------------
+0 2 753.7072
+0 4 97.3479
+0 5 0.9588
+0 6 2.4305
+0 7 836.7662
+1 2 9.8862
+1 7 97.6411
+2 3 47.0181
+5 7 523.9485
+Saída:
+TOTAL JUMPS: 6
+ENERGY REQUIRED: 729.7825
+ROUTE:
+0: 4
+1: 0
+2: 5
+3: 7
+4: 1
+5: 2
+Teste 03
+Entrada:
+--------------------
+SOLAR SYSTEMS: 6
+WORMHOLES: 6
+ORIGIN: 5
+DESTINATION: 0
+--------------------
+0 2 67.7132
+0 4 2.7441
+1 4 0.8613
+1 5 9.1149
+2 3 4.5596
+3 5 0.4337
+
+Saída:
+TOTAL JUMPS: 4
+ENERGY REQUIRED: 12.7203
+ROUTE:
+0: 5
+1: 1
+2: 4
+3: 0
+Observações
+Você deve incluir, no início do seu programa, uma breve descrição dos objetivos do programa, da entrada e da saída, além do seu nome e do seu RA.
+Indente corretamente o seu código e inclua comentários no decorrer do programa seu.
+Linguagens aceitas: c, c++, python, java

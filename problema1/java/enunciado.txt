@@ -1,0 +1,42 @@
+1 - Festa Junina
+É junho, todo brasileiro está vacinado e protegido da COVID-19, e a vida volta ao velho normal. Para comemorar a volta do trabalho presencial e fomentar a integração entres os funcionários, uma grande empresa de tecnologia resolveu realizar uma festa junina. Como em toda boa festa junina, durante a festa será realizado um casamento caipira. Para realizar esse, são necessários três participantes: um casal de apaixonados e um padre.
+Para selecionar os três participantes, num primeiro momento, a empresa decidiu liberar um formulário online no qual os funcionários poderiam se candidatar. Posteriormente percebeu-se que não seria interessante selecionar os três participantes de forma arbitrária, pois, palavras do gerente de RH, “vai dá tiro”.
+Para evitar escolher três participantes que se odeiam, a empresa liberou um segundo formulário no qual as pessoas que haviam se candidatado anteriormente, poderiam assinalar com quais pessoas, que também se candidataram anteriormente, aceitariam contracenar no casamento.
+Com todas essas informações em mãos, agora a empresa precisa saber se realmente será possível realizar esse casamento caipira. Para que haja o casamento é necessário que haja “atores”, e para que haja atores é necessário que existam três funcionários que aceitem contracenar juntos. Como a empresa é muito grande e os funcionários foram muito receptivos com a ideia da brincadeira, cabe a você, estagiário recém contratado, processar esses dados e dizer se haverá casamento ou não!
+Critérios importantes
+Independentemente do resultado dos casos de teste, o não cumprimento dos critérios abaixo implicará em nota zero para esta atividade. Qualquer dúvida, entre em contato.
+Você deve usar uma grafo para resolver o problema, e deve representá-lo por listas de adjacências.
+As únicas estruturas de dados que você poderá usar da biblioteca padrão da sua linguagem de escolha são: vetores/matrizes (estáticos e/ou dinâmicos), listas, pilhas, strings, tabelas hash, dicionários, maps.
+Se você precisar, você pode usar rotinas de ordenação fornecidas pela sua linguagem de programação.
+Entrada
+A primeira linha da entrada do seu programa consiste de um inteiro n (1 <= n <= 10000) que representa o número de funcionários que se candidataram a participar do casamento. A segunda linha da entrada consiste de um inteiro m (0 <= m <= 49995000). Cada uma das próximas m linhas consiste de dois inteiros u e v (0 <= u, v <= n - 1) separados por espaços. Esses dois inteiros representam que o funcionário u aceita participar da encenação ao lado do funcionário v (e vice-versa).
+Saída
+A saída do seu programa deve consistir de uma única linha contendo a frase VAI TER CASAMENTO!, caso existam três funcionários que mutuamente aceitem contracenar juntos, e NAO VAI TER CASAMENTO, caso contrário.
+Exemplos
+Teste 01
+Entrada:
+6
+5
+0 1
+0 4
+1 2
+2 4
+2 5
+Saída:
+NAO VAI TER CASAMENTO
+Teste 02
+Entrada:
+6
+6
+0 4
+1 5
+2 4
+3 4
+3 5
+4 5
+Saída:
+VAI TER CASAMENTO!
+Observações
+Você deve incluir, no início do seu programa, um cabeçalho com o seu nome e RA.
+Indente corretamente o seu código e inclua comentários no decorrer do programa seu.
+Linguagens aceitas: c, c++, python, java

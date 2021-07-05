@@ -1,0 +1,63 @@
+02 - Pingu Airlines
+
+Descrição
+A Pingu Airlines é uma companhia aérea low cost. Para conseguir ofertar preços tão baixos, os voos adquiridos nela costumam ter muitas escalas, mas isso não é um problema para os seus usuários, pois os preços dela são realmente incríveis. Com um preço tão baixo, a Pingu Airlines precisa vender o maior número de assentos para conseguir algum lucro. Para alcançar esse objetivo, a estratégia da Pingu é ser capaz de transportar um usuário entre qualquer par de aeroportos operados por ela, mesmo que isso signifique fazer várias escalas. Tento mais opções de destinos, a Pingu espera aumentar o número de viajantes e, consequentemente, de assentos vendidos. Atualmente, ela não consegue transportar um passageiro entre todos os aeroportos operados por ela. A Pingu consegue transportar um passageiro entre os aeroportos X e Y se:
+ela opera um voo direto entre os aeroportos X e Y; ou
+ela consegue transportar um passageiro entre os aeroportos X e Z e ela opera um voo direto entre os aeroportos Z e Y .
+Sua tarefa é desenvolver um programa que, dada a malha aérea operada pela Pingu, determine o menor número de voos diretos que ela precisa começar a operar de forma a atingir seu objetivo.
+Critérios importantes
+Independentemente dos resultados dos testes, o não cumprimento dos critérios abaixo implicará em nota zero nesta tarefa.
+O seu programa deve rodar em
+O(
+n
+2
+)
+O(n2), onde
+n
+n é o número de aeroportos
+As únicas estruturas de dados que você poderá usar da biblioteca padrão da sua linguagem de escolha são: vetores/matrizes (estáticos e/ou dinâmicos), listas, pilhas, strings, tabelas hash, dicionários, maps.
+Se você precisar, você pode usar rotinas de ordenação fornecidas pela sua linguagem de programação.
+Entrada
+A primeira linha da entrada contém um inteiro n, com 1 <= n <= 100, que denota o número de aeroportos operados pela Pingu. A segunda linha da entrada contém um inteiro m, com 0 <= m <= 10000, que denota o número de voos diretos operados pela Pingu. As próximas m linhas consistem de dois inteiros x y, com 0 <= x, y <= n - 1, separados por espaço, representando um voo direto operado pela Pingu entre os aeroportos x e y.
+Saída
+A saída do seu programa deve consistir de uma única linha contendo a frase # de novos voos: XXX, onde XXX deve ser substituído pelo número de novos voos que a Pingu precisa começar a operar para atingir seu objetivo.
+Exemplos
+Teste 01
+Entrada:
+10
+8
+0 1
+0 2
+1 2
+3 5
+3 4
+4 6
+5 6
+8 9
+Saída:
+output=# de novos voos: 3
+Teste 02
+Entrada:
+5
+0
+Saída:
+output=# de novos voos: 4
+Teste 03
+Entrada:
+11
+9
+0 2
+0 6
+3 10
+4 8
+5 8
+5 10
+6 8
+8 9
+8 10
+Saída:
+# de novos voos: 2
+Observações
+Você deve incluir, no início do seu programa, um cabeçalho com o seu nome e RA.
+Indente corretamente o seu código e inclua comentários no decorrer do programa seu.
+Linguagens aceitas: c, c++, python, java
